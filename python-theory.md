@@ -15,7 +15,6 @@ Machine Learning
 Artificial inteligent
 Web scraping
 Automation
-
 ```
 
   
