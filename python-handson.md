@@ -1,4 +1,4 @@
-# python installation
+# python 
 
 display the number in python
 
