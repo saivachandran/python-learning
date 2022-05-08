@@ -28,7 +28,9 @@ Automation
 
  Block of code run when it's called
 	
- 	
+# function paramaeter
+
+information can be passed as function parameter, parameters also called arguments
 
   
 
