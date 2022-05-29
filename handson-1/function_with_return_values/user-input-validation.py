@@ -3,9 +3,10 @@ calculation_to_units = 24
 name_of_units = "hours"
 
 def days_to_units(num_of_days): 
-
    if num_of_days > 0:
      return f"{num_of_days} days are  { num_of_days * calculation_to_units } {name_of_units} "
+   elif num_of_days == 0:
+      return "Your Entered 0 please Enter valid positive number"
    else:
      return "You Entered a negative value so no convertion for you"
     
