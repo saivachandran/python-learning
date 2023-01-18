@@ -1,0 +1,26 @@
+name: QA Verification
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  check-qa-verification:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check for QA-verified label
+      id: check-label
+      run: |
+        # Get the pull request number
+        pr_number=${{ github.event.number }}
+        # Get the labels on the pull request
+        labels=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/issues/$pr_number/labels)
+        # Check if the QA-verified label is present
+        if ! echo $labels | grep -q "QA-verified"; then
+          echo "Pull request is not QA-verified"
+          exit 1
+        fi
+    - name: Exit action
+      if: always()
+      run: exit 0
